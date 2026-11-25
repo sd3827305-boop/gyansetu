@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GyanSetu — History, Physical Education, Teaching & NCC Notes</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #172554;
+      --accent: #ea580c;
+      --accent-soft: #fff7ed;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --success: #15803d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Roboto, Noto Sans Devanagari, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Top Offer Banner */
+    .offer-bar {
+      background: linear-gradient(90deg, var(--accent), #dc2626);
+      color: #fff;
+      text-align: center;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    /* Header */
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--primary-dark);
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .brand-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      padding: 42px 18px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #e2e8f0;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-accent:hover {
+      background: #c2410c;
+    }
+
+    .btn-light {
+      background: #fff;
+      color: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .hero-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .hero-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-box ul {
+      list-style: none;
+      font-size: 0.92rem;
+      color: #f1f5f9;
+    }
+
+    .hero-box li {
+      margin-bottom: 8px;
+    }
+
+    /* Sections */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 18px;
+    }
+
+    .section-head {
+      margin-bottom: 20px;
+    }
+
+    .section-head h2 {
+      font-size: 1.55rem;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Filter Tabs */
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* Product Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .price-now {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--success);
+    }
+
+    .price-old {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .card-actions .btn {
+      flex: 1;
+      text-align: center;
+      padding: 10px 12px;
+      font-size: 0.88rem;
+    }
+
+    /* Quiz / Info Box */
+    .info-panel {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: #cbd5e1;
+      padding: 28px 18px;
+      margin-top: 30px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 100;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal {
+      background: #fff;
+      border-radius: 14px;
+      max-width: 480px;
+      width: 100%;
+      padding: 22px;
+    }
+
+    .modal h3 {
+      margin-bottom: 10px;
+      color: var(--primary-dark);
+    }
+
+    .modal p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 780px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- First Sale Offer Bar -->
+  <div class="offer-bar">
+    🎉 Pehli Sale Special Offer: Shuruati PDF Notes & Packs Sirf ₹11 Mein!
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-wrap">
+      <a href="#" class="brand">
+        <div class="brand-logo">GS</div>
+        <div>
+          <span class="brand-title">GyanSetu</span>
+          <span class="brand-sub">Study Notes • Quiz • Exam Prep</span>
+        </div>
+      </a>
+      <nav>
+        <a href="#notes">Notes (₹11)</a>
+        <a href="#quiz">Practice</a>
+        <a href="#about">Hamare Baare Mein</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="badge">Pehli Sale Dhamaka — Sabhi Shuruati Packs ₹11</span>
+        <h1>GyanSetu — History, Physical Education, Teaching aur NCC ki Smart Taiyari</h1>
+        <p>
+          UGC NET / JRF History, STET / Physical Education & Teaching line, aur NCC exam ke liye structured PDF notes aur one-liner sets — ab pehli sale mein sirf ₹11 se shuru.
+        </p>
+        <div class="hero-btns">
+          <a href="#notes" class="btn btn-accent">₹11 Notes Dekhen</a>
+          <a href="#quiz" class="btn btn-light">Free Demo / Quiz</a>
+        </div>
+      </div>
+
+      <div class="hero-box">
+        <h3>Shuruati Mukhya Vishay</h3>
+        <ul>
+          <li>✅ History — UGC NET / JRF & Core Topics</li>
+          <li>✅ Physical Education & Teaching Line (STET)</li>
+          <li>✅ NCC Exam Preparation Notes</li>
+          <li>✅ Pehli Sale Price: Sirf ₹11</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notes Store Section -->
+  <section id="notes" class="container">
+    <div class="section-head">
+      <h2>Shuruati Study PDFs & Packs (Pehli Sale: ₹11)</h2>
+      <p>Apni category chunen aur ₹11 ke pehli sale offer mein notes dekhen.</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Sabhi</button>
+      <button class="filter-btn" data-filter="history">History (UGC NET / JRF)</button>
+      <button class="filter-btn" data-filter="pe">Physical Education & STET</button>
+      <button class="filter-btn" data-filter="ncc">NCC Exam</button>
+    </div>
+
+    <div class="grid" id="productGrid">
+      <!-- Card 1: History -->
+      <article class="card" data-category="history">
+        <div>
+          <span class="tag">History • UGC NET / JRF</span>
+          <h3>UGC NET / JRF History — Core & One-Liner Notes</h3>
+          <p>Exam ke liye zaroori tathya, kalakram aur concise revision points ek jagah.</p>
+        </div>
+        <div>
+          <div class="price-row">
+            <span class="price-now">₹11</span>
+            <span class="price-old">₹49</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn btn-outline" onclick="openSample('UGC NET / JRF History Notes', 'Sample Preview: Mukhya kaal, pramukh ghatnayein aur exam-focused one-liner points is PDF mein shamil hain.')">Sample</button>
+            <a href="#buy-history" class="btn btn-accent buy-link" data-item="UGC NET / JRF History Notes">Buy ₹11</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Physical Education & Teaching -->
+      <article class="card" data-category="pe">
+        <div>
+          <span class="tag">Physical Education • STET / Teaching</span>
+          <h3>Physical Education & Teaching Line Notes</h3>
+          <p>STET aur teaching exam ke liye sports science, yoga, anatomy aur objective points.</p>
+        </div>
+        <div>
+          <div class="price-row">
+            <span class="price-now">₹11</span>
+            <span class="price-old">₹49</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn btn-outline" onclick="openSample('Physical Education & Teaching Notes', 'Sample Preview: Sports training, yoga, health education aur exam one-liners ka sankalan.')">Sample</button>
+            <a href="#buy-pe" class="btn btn-accent buy-link" data-item="Physical Education & Teaching Notes">Buy ₹11</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: NCC Exam -->
+      <article class="card" data-category="ncc">
+        <div>
+          <span class="tag">NCC Exam • Preparation</span>
+          <h3>NCC Exam Complete Revision & One-Liner PDF</h3>
+          <p>NCC exam ki taiyari ke liye drill, general awareness, leadership aur important topics.</p>
+        </div>
+        <div>
+          <div class="price-row">
+            <span class="price-now">₹11</span>
+            <span class="price-old">₹39</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn btn-outline" onclick="openSample('NCC Exam Revision PDF', 'Sample Preview: NCC exam ke mukhya vishay aur tezi se revision karne wale points.')">Sample</button>
+            <a href="#buy-ncc" class="btn btn-accent buy-link" data-item="NCC Exam Revision PDF">Buy ₹11</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Free Quiz / Practice Preview -->
+  <section id="quiz" class="container">
+    <div class="section-head">
+      <h2>Free Practice / Quiz Preview</h2>
+      <p>Kharidne se pehle chhota sa abhyas prashn dekhen.</p>
+    </div>
+    <div class="info-panel">
+      <p><strong>Abhyas Prashn:</strong> UGC NET History aur Teaching/STET/NCC taiyari mein niyamit one-liner revision aur practice sets se accuracy kaise badhti hai?</p>
+      <p style="margin-top: 8px; color: var(--muted);">
+        Jald hi yahan interactive practice quiz aur naye PDF packs jode jayenge. Pehli sale mein sabhi shuruati packs sirf <strong>₹11</strong> mein uplabdh rahenge.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container">
+    <div class="section-head">
+      <h2>GyanSetu Ke Baare Mein</h2>
+    </div>
+    <div class="info-panel">
+      <p>
+        <strong>GyanSetu</strong> ka uddeshya History (UGC NET / JRF), Physical Education & Teaching line (STET), aur NCC exam ki taiyari kar rahe abhyarthiyon ko kam keemat mein saaf aur upyogi study material dena hai.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div><strong>GyanSetu</strong> — Pehli Sale Price: ₹11</div>
+      <div>Vishay: History (UGC NET/JRF) • Physical Education & Teaching • NCC</div>
+    </div>
+  </footer>
+
+  <!-- Sample Modal -->
+  <div class="modal-backdrop" id="sampleModal">
+    <div class="modal">
+      <h3 id="modalTitle">Sample Preview</h3>
+      <p id="modalText"></p>
+      <button class="btn btn-primary" style="background: var(--primary); color: #fff;" onclick="closeSample()">Band Karen</button>
+    </div>
+  </div>
+
+  <script>
+    // Category filter logic
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".card");
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filter = btn.getAttribute("data-filter");
+
+        cards.forEach((card) => {
+          const cat = card.getAttribute("data-category");
+          if (filter === "all" || cat === filter) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+
+    // Sample modal logic
+    function openSample(title, text) {
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalText").textContent = text;
+      document.getElementById("sampleModal").classList.add("open");
+    }
+
+    function closeSample() {
+      document.getElementById("sampleModal").classList.remove("open");
+    }
+
+    // Placeholder click alert for Buy buttons until payment links are added
+    document.querySelectorAll(".buy-link").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        if (link.getAttribute("href").startsWith("#buy-")) {
+          e.preventDefault();
+          const item = link.getAttribute("data-item");
+          alert(item + " (₹11) ke liye abhi payment link jorna baaki hai. Payment link banne ke baad yahan direct link lagaya jayega.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
